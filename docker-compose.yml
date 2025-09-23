@@ -1,10 +1,12 @@
 services:
   redis:
-    image: redis   # 👈 official Redis image
+    image: redis
     container_name: redis
     restart: always
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data   # 👈 Persist Redis data
 
   redisdemo:
     build:
@@ -22,8 +24,10 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword123!
       - DOTNET_RUNNING_IN_CONTAINER=true
     volumes:
-     - C:/certs:/https:ro
-
+      - C:/certs:/https:ro
     depends_on:
       - redis
     restart: always
+
+volumes:
+  redis_data:   # 👈 Named volume for Redis persistence
