@@ -1,10 +1,30 @@
-name: CI
+name: Build and Deploy with Docker Compose
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]   # run on pushes to main
 
 jobs:
+  build-and-deploy:
+    runs-on: self-hosted    # 👈 runs on your Windows runner, not GitHub cloud
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker (optional if pushing to registry)
+        run: |
+          echo "No Docker login needed, running locally"
+
+      - name: Stop old containers
+        run: |
+          docker compose down || echo "No containers running"
+
+      - name: Build and start containers
+        run: |
+          docker compose up -d --build
+
+
+# jobs:
   build:
     runs-on: self-hosted   # 👈 This ensures it runs on your Windows runner
     steps:
