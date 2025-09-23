@@ -2,7 +2,7 @@ name: Build and Deploy with Docker Compose
 
 on:
   push:
-    branches: [ "main" ]   # run on pushes to main
+    branches: [ "master" ]   # run on pushes to master
 
 jobs:
   build-and-deploy:
