@@ -17,7 +17,7 @@ jobs:
 
       - name: Stop old containers
         run: |
-          docker compose down || echo "No containers running"
+          docker compose down
 
       - name: Build and start containers
         run: |
