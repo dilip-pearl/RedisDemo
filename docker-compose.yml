@@ -17,12 +17,13 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      # - ASPNETCORE_HTTPS_PORTS=8081
-      # - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
-      # - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword123!
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword123!
       - DOTNET_RUNNING_IN_CONTAINER=true
     volumes:
-      - ./certs:/https:ro
+     - C:/certs:/https:ro
+
     depends_on:
       - redis
     restart: always
