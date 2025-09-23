@@ -1,0 +1,2 @@
+dotnet dev-certs https -ep ./certs/aspnetapp.pfx -p MyPassword123!
+do this to export certificate create certs folder first

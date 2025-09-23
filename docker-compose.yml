@@ -1,0 +1,28 @@
+services:
+  redis:
+    image: redis   # 👈 official Redis image
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  redisdemo:
+    build:
+      context: .
+      dockerfile: RedisDemo/Dockerfile
+    container_name: redisdemo
+    ports:
+      - "5000:8080"
+      - "5443:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=MyPassword123!
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    volumes:
+      - ./certs:/https:ro
+    depends_on:
+      - redis
+    restart: always
