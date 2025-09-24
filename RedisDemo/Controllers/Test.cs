@@ -6,9 +6,9 @@ namespace RedisDemo.Controllers;
 [Route("api/[controller]")]
 public class TestController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult Get()
-    {
-        return Ok("Test controller is working!");
-    }
+    // [HttpGet]
+    // public IActionResult Get()
+    // {
+    //     return Ok("Test controller is working!");
+    // }
 }
