@@ -1,14 +1,15 @@
+
 services:
-  redis:
+  redis: # Redis service configuration
     image: redis
     container_name: redis
     restart: always
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data   # 👈 Persist Redis data
+      - redis_data:/data   # Persist Redis data
 
-  redisdemo:
+  redisdemo: # ASP.NET Core application service configuration
     build:
       context: .
       dockerfile: RedisDemo/Dockerfile
@@ -28,6 +29,7 @@ services:
     depends_on:
       - redis
     restart: always
+    
 
 volumes:
-  redis_data:   # 👈 Named volume for Redis persistence
+  redis_data:   # Named volume for Redis persistence
