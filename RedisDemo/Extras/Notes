@@ -20,3 +20,6 @@ certificates and volumes.
 Docker-file is there for each microservice and its job is to copy the code from the local machine to the container, 
 restore depedencies, build and publish the app in the container.
 
+C:\actions-runner -- > This is the location where you have installed the runner and configured it to connect to github workflows.
+C:\certs\aspnetapp.pfx --> This is the location where you have exported the dev certificate and this will be used in the docker compose file to copy the certificate to the container and then use it in the application.
+
