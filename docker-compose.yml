@@ -1,6 +1,6 @@
 services:
   redis: # Redis service configuration
-    image: redis
+    image: redis:alpine
     container_name: redis
     restart: always
     ports:
