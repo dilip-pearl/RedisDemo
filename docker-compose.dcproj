@@ -12,5 +12,6 @@
   <ItemGroup>
     <None Include=".github\workflows\cicd_dockercompose.yml" />
     <None Include=".dockerignore" />
+    <None Include="docker-compose.yml" />
   </ItemGroup>
 </Project>
