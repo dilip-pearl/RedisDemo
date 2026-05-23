@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.5.11723.231 stable
+VisualStudioVersion = 18.5.11723.231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisDemo", "RedisDemo\RedisDemo.csproj", "{847D39B0-7602-4A6A-97B0-56450B71CC84}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{94442456-2AC7-4E0B-86C3-78B2633E4C0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{18AC56DA-7C0A-4B49-8333-6F890BE4FF92}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\cicd_kubernetes.yml = .github\workflows\cicd_kubernetes.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +22,12 @@ Global
 		{847D39B0-7602-4A6A-97B0-56450B71CC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{847D39B0-7602-4A6A-97B0-56450B71CC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{847D39B0-7602-4A6A-97B0-56450B71CC84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18AC56DA-7C0A-4B49-8333-6F890BE4FF92} = {94442456-2AC7-4E0B-86C3-78B2633E4C0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7365A30B-D649-49D7-893F-E2360AE58A4B}
