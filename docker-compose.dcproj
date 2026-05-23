@@ -10,11 +10,7 @@
     <DockerServiceName>redisdemo</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
-    <None Include=".github\workflows\ci.yml" />
-    <None Include="docker-compose.override.yml">
-      <DependentUpon>docker-compose.yml</DependentUpon>
-    </None>
-    <None Include="docker-compose.yml" />
+    <None Include=".github\workflows\cicd_kubernetes.yml" />
     <None Include=".dockerignore" />
   </ItemGroup>
 </Project>

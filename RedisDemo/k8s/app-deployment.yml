@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: redisdemo
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: redisdemo
+
+  template:
+    metadata:
+      labels:
+        app: redisdemo
+
+    spec:
+      containers:
+      
+      - name: redisdemo
+        image: redisdemo:latest
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 8080
+        - containerPort: 8081
+
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+
+        - name: ASPNETCORE_HTTP_PORTS
+          value: "8080"
+
+        - name: ASPNETCORE_HTTPS_PORTS
+          value: "8081"
+
+        - name: DOTNET_RUNNING_IN_CONTAINER
+          value: "true"
+
+        - name: REDIS_HOST
+          value: "redis-service"
+
+        - name: ASPNETCORE_Kestrel__Certificates__Default__Path
+          value: "/https/aspnetapp.pfx"
+
+        - name: ASPNETCORE_Kestrel__Certificates__Default__Password
+          value: "MyPassword123!"
+
+        volumeMounts:
+        - name: certs-volume
+          mountPath: /https
+          readOnly: true
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+
+      volumes:
+      - name: certs-volume
+        hostPath:
+          path: /run/desktop/mnt/host/c/certs
