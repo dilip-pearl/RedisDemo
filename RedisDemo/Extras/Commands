@@ -1,0 +1,25 @@
+// Powershell commands
+cd F:\Dilip\Web\PST\RedisDemo
+
+
+// Docker commands
+docker pull redis:alpine
+docker images
+docker ps
+docker build -t redisdemo:latest -f RedisDemo/Dockerfile .
+docker run -d redis:alpine
+docker exec -it <container-id> sh
+docker logs <container-id>
+docker stop <container-id>
+docker rm <container-id>
+
+
+// Kubernetes commands
+kubectl cluster-info
+kubectl apply -f k8s/
+kubectl rollout restart deployment redisdemo
+kubectl get svc
+kubectl get pods
+kubectl exec -it <pod-id> -- sh
+kubectl delete deployment redisdemo
+kubectl describe pod <pod-id>

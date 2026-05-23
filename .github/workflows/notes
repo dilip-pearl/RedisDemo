@@ -1,2 +1,17 @@
+To setup dev certificate in container execute the below command first
 dotnet dev-certs https -ep ./certs/aspnetapp.pfx -p MyPassword123!
-do this to export certificate create certs folder first
+and then export this certificate to the container using Env variables
+
+Go to github under repositories --> Actions --> Runners --> New Runner --> New Self Hosted Runner 
+and follow the instructions that appear there
+
+You have install the runner in your maching in c:/actions-runner and then configure the runner to connect to the
+github workflows. So that whenever you push your code, the workflow gets triggered and the runner which is like 
+listener will run the CI/CD script.
+
+The CI/CD will checkoout the repository on push trigger and then restart the docker-compose script and then the control is transfered to the docker-compose script. 
+
+Docker compose is like contanier orchestration similar to kubernetes and it will configure each container and start the container using the docker file. It will create network between containers so that it can talk to each other, configure ports, certificates and volumes.
+
+Docker-file is there for each microservice and its job is to copy the code from the local machine to the container, restore depedencies, build and publish the app in the container.
+

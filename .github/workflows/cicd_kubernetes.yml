@@ -1,0 +1,29 @@
+name: Build and Deploy to Kubernetes
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: self-hosted
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: |
+        docker build -t redisdemo:latest -f RedisDemo/Dockerfile .
+
+    - name: Apply Kubernetes manifests
+      run: |
+        kubectl apply -f k8s/
+
+    - name: Restart deployment
+      run: |
+        kubectl rollout restart deployment redisdemo
