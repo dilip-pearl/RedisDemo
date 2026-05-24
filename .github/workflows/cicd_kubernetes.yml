@@ -1,4 +1,4 @@
-name: Build and Deploy to Kubernetes on Premise
+name: Kubernetes Deployment On Premise
 
 on:
   push:
