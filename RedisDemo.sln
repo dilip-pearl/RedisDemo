@@ -12,6 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\cicd_kubernetes.yml = .github\workflows\cicd_kubernetes.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{784C7D6F-C57E-42A4-B9A9-1E8B701D0963}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\app-deployment.yml = k8s\app-deployment.yml
+		k8s\app-service.yml = k8s\app-service.yml
+		k8s\redis-deployment.yaml = k8s\redis-deployment.yaml
+		k8s\redis-pvc.yml = k8s\redis-pvc.yml
+		k8s\redis-service.yml = k8s\redis-service.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
