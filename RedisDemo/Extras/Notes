@@ -20,7 +20,11 @@ certificates and volumes.
 Docker-file is there for each microservice and its job is to copy the code from the local machine to the container, 
 restore depedencies, build and publish the app in the container.
 
-C:\actions-runner -- > This is the location where you have installed the runner and configured it to connect to github workflows.
+C:\actions-runner --> This is the location where you have installed the runner and configured it to connect to github workflows.
 C:\certs --> This is the location where you have exported the dev certificate and this will be used in the docker compose file 
 			 to copy the certificate to the container and then use it in the application.
+
+./config.cmd remove --> This command is used to remove the runner from the machine and disconnect it from github workflows.
+./run.cmd --> This command is used to start the runner and it will start listening for the workflow triggers. Whenever you push your code, 
+			 the workflow gets triggered and the runner will run the CI/CD script.
 
