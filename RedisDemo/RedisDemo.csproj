@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Dockerfile" />
+    <Compile Include="Dockerfile.new" />
   </ItemGroup>
 
   <ItemGroup>
