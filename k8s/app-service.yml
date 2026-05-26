@@ -3,6 +3,7 @@ kind: Service
 
 metadata:
   name: redisdemo-service
+  namespace: dev
 
 spec:
   type: NodePort
@@ -13,12 +14,12 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 8080
-      targetPort: 8080
-      nodePort: 30080
+      port: 8080 # Port to expose the service on. This is the port that other services will use to access this service.
+      targetPort: 8080 # Port on the container to direct traffic to.
+      nodePort: 30080 # Port of the machine to expose the service on. Must be a valid port number, 30000-32767.
 
     - name: https
       protocol: TCP
-      port: 8081
-      targetPort: 8081
-      nodePort: 30443
+      port: 8081 # Port to expose the service on. This is the port that other services will use to access this service.
+      targetPort: 8081 # Port on the container to direct traffic to.
+      nodePort: 30443 # Port of the machine to expose the service on. Must be a valid port number, 30000-32767.

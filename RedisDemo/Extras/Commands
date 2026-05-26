@@ -1,5 +1,6 @@
 // Powershell commands
 cd F:\Dilip\Web\PST\RedisDemo
+C:\actions-runner\RedisDemo\run.cmd
 
 
 // Docker commands
