@@ -26,4 +26,4 @@ jobs:
 
     - name: Restart deployment
       run: |
-        kubectl rollout restart deployment redisdemo
+        kubectl rollout restart deployment redisdemo -n dev
